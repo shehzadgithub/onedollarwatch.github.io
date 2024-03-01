@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="ebe0bab5a16088b7f66a806a7f522b23.png">
+
+    <title>One Dollar Watch</title>
+    <style>
+        body {
+            background: url('top-view-colorful-paper-sheets.jpg') center/cover no-repeat;
+            /* Set background image */
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            /* Adjust the alpha value for darkness */
+        }
+
+        .login-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Slightly increased opacity */
+            padding: 40px;
+            /* Increased padding for a larger card */
+            border-radius: 15px;
+            /* Increased border radius */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            /* Increased box shadow */
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            /* Ensure the login card is above the background image */
+            margin-right: 630px;
+            width: 320px;
+            height: 390px;
+        }
+
+        h2 {
+            color: #333;
+            /* Text color */
+            margin-bottom: 20px;
+            /* Increased margin for better spacing */
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #333;
+            margin-right: 240px;
+            /* Text color */
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            /* Increased padding for larger input fields */
+            margin-top: 8px;
+            /* Adjusted margin for better spacing */
+            margin-bottom: 12px;
+            /* Adjusted margin for better spacing */
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            /* Input border color */
+            border-radius: 8px;
+            /* Increased border radius */
+            font-size: 16px;
+            /* Font size */
+            color: #333;
+            /* Text color */
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4CAF50;
+            /* Border color on focus */
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 143px;
+            /* Increased padding for larger button */
+            border: none;
+            border-radius: 8px;
+            /* Increased border radius */
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Add loader styles */
+        .loader {
+            display: none;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 24px;
+            /* Increased width for larger loader */
+            height: 24px;
+            /* Increased height for larger loader */
+            position: absolute;
+            top: 20px;
+            /* Adjusted top for better positioning */
+            right: 20px;
+            /* Adjusted right for better positioning */
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+
+
+        .password23 {
+            margin-top: 55px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-card">
+        <h2>Login</h2>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <!-- Add a loader div -->
+            <div class="loader" id="loader"></div>
+
+            <!-- Add onclick event to trigger the loader and call the login function -->
+            <button type="button" onclick="showLoader(); login()">Login</button>
+
+            <p class="password23">Username: earnbyonedollor</p>
+            <p class="username23">Password: onedollarscheme</p>
+        </form>
+    </div>
+
+    <script>
+        function showLoader() {
+            // Display the loader when the button is clicked
+            document.getElementById('loader').style.display = 'inline-block';
+        }
+
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Simulate an asynchronous process (e.g., API call)
+            setTimeout(function () {
+                // Hide the loader after the asynchronous process is complete
+                document.getElementById('loader').style.display = 'none';
+
+                if (username === 'earnbyonedollor' && password === 'onedollarscheme') {
+                    alert('Login Successful!');
+                    window.location.href = 'buypage.html';
+                } else {
+                    alert('Login Failed. Check your username and password.');
+                }
+            }, 2000); // Change the timeout duration as needed
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Add your meta tags and styles here -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Include Font Awesome CSS -->
+    <link rel="icon" type="image/png" href="ebe0bab5a16088b7f66a806a7f522b23.png">
+
+    <link rel="stylesheet" href="styles.css">
+    <title>One Dollar Watch</title>
+
+    <style>
+        /* Your existing styles */
+        /* ... */
+
+        /* Background Image Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('rm222batch5-mind-03.jpg') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* New Card Styles */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            z-index: 1;
+            /* Ensure the card container is above the background image */
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 285px;
+            max-width: 100%;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            color: #333;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        .button {
+            width: 280px;
+            height: 40px;
+            border-radius: 20px;
+            outline: none;
+            border: none;
+            background-color: #2ec452;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:active {
+            background-color: darkgreen;
+            /* Change background color when button is clicked */
+        }
+
+        .istock {
+            width: 230px;
+        }
+
+        .return-button {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: #fd0000;
+            border: none;
+            border-radius: 17px;
+            font-size: 16px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 91px;
+            height: 35px;
+        }
+
+        .return-button:active {
+            background-color: darkgreen;
+            /* Change background color when button is clicked */
+        }
+
+        /* Loader and Overlay Styles */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* Dark semi-transparent background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            display: none;
+        }
+
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 2s linear infinite;
+            z-index: 1000;
+            /* Ensure the loader is above the background overlay */
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Loader and Overlay -->
+    <div class="overlay" id="overlay">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Card Container -->
+    <div class="card-container">
+        <!-- Card 1 -->
+        <div class="card">
+            <h3>Get items worth a fortune for just 1$</h3>
+            <p>Simply select a product from below and purchase it for the price for 1$ and get a chance to win.</p>
+
+            <img class="istock" src="istockphoto-496730484-612x612.jpg" alt="">
+            <h3>Apple Watch Series 8</h3>
+            <p><s>Price Rs.112,000</s></p>
+
+            <button class="button" onclick="buyNow()">Buy for 1$</button>
+        </div>
+
+        <!-- Add more cards as needed -->
+        <!-- Card 2, Card 3, ... -->
+    </div>
+
+    <!-- Return Button -->
+    <button class="return-button" onclick="goToHomePage()">Return</button>
+
+    <script>
+        function goToHomePage() {
+            // Show loader before navigating
+            showLoader();
+
+            // Replace 'UI.html' with the actual file name or URL of your home page
+            setTimeout(function () {
+                window.location.href = 'onedollarscheme.html';
+            }, 1000); // Adjust the timeout duration as needed
+        }
+
+        function buyNow() {
+            // Show loader before navigating
+            showLoader();
+
+            // Replace 'purchase.html' with the actual file name or URL of your new page
+            setTimeout(function () {
+                window.location.href = 'purchase.html';
+            }, 1000); // Adjust the timeout duration as needed
+        }
+
+        function showLoader() {
+            var overlay = document.getElementById("overlay");
+            overlay.style.display = "flex";
+        }
+    </script>
+</body>
+
+</html>
